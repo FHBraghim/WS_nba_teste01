@@ -12,17 +12,8 @@ if req.status_code == 200:
 soup = BeautifulSoup(content,'html.parser')
 table = soup.find(name='table')
 
-#   Convertendo a variável em str e carregando dados em um Data Frame. O [0] representa a posição inicial da tabela (a contagem começa em 0 e não em 1).
 table_str = str(table)
 df = pd.read_html(table_str)[0]
-
-# Caso a página possua mais de uma tabela, existem duas formas de fazer a extração. A primeira seria substituir o find
-# por find_all, assim retornaria uma lista com todos os elementos encontrados, e seria possível acessar a tabela verificando
-# a posição do vetor. A segunda maneira seria utilizando o argumento 'attrs' do método find, passando um dicionário que
-# indicaria os atributos que o elemento obrigatotiamente deveria ter. Exemplo de como ficaria caso fosse extraído as
-# colocações dos times na conferência Oeste (Western Conference).
-
-    # table = soup.find(name='table', attrs={'id':'confs_standings_W'})
 
 # Loop com range para iterar estatísticas de 2013 a 2018
 
