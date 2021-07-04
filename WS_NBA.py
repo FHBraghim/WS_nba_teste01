@@ -13,7 +13,7 @@ soup = BeautifulSoup(content,'html.parser')
 table = soup.find(name='table')
 
 table_str = str(table)
-df = pd.read_html(table_str)[0]
+df = pd.read_html(table_str)
 
 # Loop com range para iterar estatísticas de 2013 a 2018
 
