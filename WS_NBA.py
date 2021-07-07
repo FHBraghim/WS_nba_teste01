@@ -28,8 +28,8 @@ def scrape_stats(base_url, year_start, year_end):
 url = 'https://www.basketball-reference.com/leagues/NBA_{}_totals.html'
 df = scrape_stats(url, 2013,2018)
 
-drop_indexes = df[df['Rk'] == 'Rk'].index # Pega indexes onde a coluna 'RK' possui valor 'RK'.
-df.drop(drop_indexes, inplace=True) # Elimina os valores dos index passados da tabela
+drop_indexes = df[df['Rk'] == 'Rk'].index
+df.drop(drop_indexes, inplace=True)
 
 # Convertendo tabelas para valores numéricos
 numeric_cols = df.columns.drop(['Player', 'Pos', 'Tm'])
