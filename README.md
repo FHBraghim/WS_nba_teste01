@@ -1,2 +1,2 @@
-# WS_nba_teste01
-Web Scraping de estatísticas da NBA, das temporadas entre 2013 e 2018.
+# WebScraping_NBA
+Web Scraping de estatísticas das temporadas da NBA entre 2013 e 2018.
